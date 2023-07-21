@@ -6,11 +6,10 @@
 [build]
   command = "npm run build:ssr && npm run copy:files"
   functions = "netlify/functions/"
+  publish = "dist/cifrado-srr/browser"
 
 [[plugins]]
   package = "@netlify/plugin-angular-universal"
-  [plugins.inputs]
-    projectName = "angular-universal"
 
 [functions]
   included_files = ["dist/**"]
