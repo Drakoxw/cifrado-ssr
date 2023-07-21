@@ -10,7 +10,7 @@
 [[plugins]]
   package = "@netlify/plugin-angular-universal"
   [plugins.inputs]
-    projectName = "cifrado-ssr"
+    projectName = "angular-universal"
 
 [functions]
   included_files = ["dist/**"]
