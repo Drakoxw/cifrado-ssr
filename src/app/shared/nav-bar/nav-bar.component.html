@@ -1,0 +1,199 @@
+<nav class="border-gray-200 bg-white min-h-[92px] font-[montserrat]">
+  <div
+    class="w-full flex md:flex-wrap items-center text-base justify-between mx-auto py-4 md:px-20 relative border-b border-gray-200"
+  >
+    <a routerLink="/" class="flex">
+      <img
+        width="240"
+        height="61"
+        src="../../../assets/img/CIFRADO-LOGO-FULL-240x61.png"
+        class="ml-12"
+        alt="CIFRADO-LOGO-FULL"
+      />
+    </a>
+
+    <nav class="hidden md:!block">
+      <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+          <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8">
+            <li class="">
+              <a
+                [routerLink]="routes.home"
+                routerLinkActive
+                #rla_in="routerLinkActive"
+                [class]="
+                  rla_in.isActive
+                    ? 'text-[#00a787]'
+                    : 'text-gray-900  hover:text-[#00a787]'
+                "
+              >
+                Inicio
+              </a>
+            </li>
+
+            <li class="">
+              <a
+                [routerLink]="routes.aboutUs"
+                routerLinkActive
+                #rla_q="routerLinkActive"
+                [class]="
+                  rla_q.isActive
+                    ? 'text-[#00a787]'
+                    : 'text-gray-900  hover:text-[#00a787]'
+                "
+              >
+                Quiénes somos
+              </a>
+            </li>
+
+            <li>
+              <a
+                [routerLink]="routes.contactUs"
+                routerLinkActive
+                #rla_c="routerLinkActive"
+                [class]="
+                  rla_c.isActive
+                    ? 'text-[#00a787]'
+                    : 'text-gray-900  hover:text-[#00a787]'
+                "
+              >
+                Contáctanos
+              </a>
+            </li>
+          </ul>
+          <ul class="flex gap-3">
+            <li>
+              <a
+                href="https://wa.me/573044898454"
+                target="_blank"
+                rel="noopener nofollow"
+              >
+                <img
+                  width="20"
+                  height="20"
+                  src="../../../assets/svgs/facebook.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/cifradosas/"
+                target="_blank"
+                rel="noopener nofollow"
+              >
+                <img
+                  width="20"
+                  height="20"
+                  src="../../../assets/svgs/instagram.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/573044898454"
+                target="_blank"
+                rel="noopener nofollow"
+              >
+                <img
+                  width="20"
+                  height="20"
+                  src="../../../assets/svgs/whatsapp.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+          </ul>
+          <span class="font-medium ml-8 mt-0 mr-6 space-x-8 text-[#00a787]"
+            ><a href="mailto:contacto@cifrado.com.co"
+              >contacto@cifrado.com.co</a
+            ></span
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="md:hidden mr-12">
+      <button
+        (click)="ToogleMenu()"
+        data-collapse-toggle="navbar-hamburger"
+        type="button"
+        class="inline-flex items-center p-2 -mr-4 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-hamburger"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  *ngIf="showMenu"
+  class="fixed w-full p-3 z-50 rounded bg-white h-auto"
+  style="box-shadow: 1px 3px 6px 0px grey"
+>
+  <div class="absolut" id="navbar-hamburger">
+    <ul
+      (click)="ToogleMenu()"
+      class="flex flex-col gap-1 text-2xl font-medium rounded-lg w-max"
+    >
+      <li class="">
+        <a
+          [routerLink]="routes.home"
+          routerLinkActive
+          #rla_in="routerLinkActive"
+          [class]="
+            rla_in.isActive
+              ? 'text-[#00a787]'
+              : 'text-gray-900  hover:text-[#00a787]'
+          "
+        >
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="routes.aboutUs"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [class]="
+            rla.isActive
+              ? 'text-[#00a787]'
+              : 'text-gray-900  hover:text-[#00a787]'
+          "
+        >
+          Quiénes somos
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="routes.contactUs"
+          routerLinkActive
+          #rla_c="routerLinkActive"
+          [class]="
+            rla_c.isActive
+              ? 'text-[#00a787]'
+              : 'text-gray-900  hover:text-[#00a787]'
+          "
+        >
+          Contáctanos
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
