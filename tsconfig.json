@@ -32,7 +32,7 @@
       "@interfaces/*": ["src/app/core/interfaces/*"],
       "@mocks/*": ["src/app/core/mocks/*"],
       "@moduleClient/*": ["src/app/modules/client/*"],
-      "@moduleUser/*": ["src/app/modules/user/*"],
+      "@modulePublic/*": ["src/app/modules/public/*"],
     }
   },
   "angularCompilerOptions": {

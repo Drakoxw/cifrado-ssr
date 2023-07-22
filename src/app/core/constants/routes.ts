@@ -9,7 +9,7 @@ export const MODULES = {
 export const PATHS_MODULE_CLIENT: RoutesClient = {
   root: '',
   home: 'inicio',
-  aboutUs: 'quienessomos',
+  aboutUs: 'quienes-somos',
   contactUs: 'contactanos',
 };
 
