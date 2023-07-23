@@ -6,19 +6,21 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('@modulePublic/public.module').then(m => m.PublicModule)
+    loadChildren: () =>
+      import('@modulePublic/public.module').then((m) => m.PublicModule),
   },
   {
     path: 'client',
-    loadChildren: () => import('@moduleClient/client.module').then(m => m.ClientModule)
+    loadChildren: () =>
+      import('@moduleClient/client.module').then((m) => m.ClientModule),
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {}),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
