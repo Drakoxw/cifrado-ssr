@@ -10,17 +10,36 @@ import {
 import { Subscription, interval, timer } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 
+const DataCarrusel = [
+  {
+    image: '../../../../../assets/img/banner-home/cableadobanner.webp',
+    alt: 'Cableado banner',
+  },
+  {
+    image: '../../../../../assets/img/banner-home/cctvbanner.webp',
+    alt: 'CCTV banner',
+  },
+  {
+    image: '../../../../../assets/img/banner-home/mantbanner.webp',
+    alt: 'Mantenimiento banner',
+  },
+  {
+    image: '../../../../../assets/img/banner-home/ptpbanner.webp',
+    alt: 'ptp banner',
+  }
+]
+
 @Component({
   selector: 'app-carrusel',
   templateUrl: './carrusel.component.html',
   styleUrls: ['./carrusel.component.css'],
 })
-// export class CarruselComponent implements AfterViewInit {
 export class CarruselComponent implements AfterViewInit, OnDestroy {
   @ViewChild('carouselWrapper') carouselWrapperRef!: ElementRef<HTMLDivElement>;
   private currentItemIndex = 0;
   private itemWidth = 0;
 
+  dataCarrusel = [...DataCarrusel, ...DataCarrusel]
   susb: Subscription[] = [];
   source = interval(4000);
 
