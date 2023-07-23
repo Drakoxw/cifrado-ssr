@@ -2,6 +2,5 @@
   command = "npm run prerender"
   functions = "./functions"
   publish = "dist/cifrado-ssr/browser"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
+
+
