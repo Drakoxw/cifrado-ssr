@@ -1,6 +1,6 @@
 import { Articules } from "@interfaces/models";
 
-export const ListArticules: Articules[] = [
+export const ListArticulesOld: Articules[] = [
   {
     imagen: 'https://www.cifrado.com.co/wp-content/uploads/2021/04/domotica2.jpg',
     titulo: 'DOMÓTICA SMART HOME',
@@ -38,6 +38,49 @@ export const ListArticules: Articules[] = [
   },
   {
     imagen: 'https://www.cifrado.com.co/wp-content/uploads/2021/04/redesing.jpg',
+    titulo: 'SOPORTE & MANTENIMIENTO PÓLIZAS',
+    descripcion: 'Proporcionamos asistencia con hardware y software, cualquier tipo de daños o simplemente servicios como diagnósticos o mantenimientos preventivos.'
+  }
+]
+// <img src="../../../../../assets/img/w800/amplificadorcelular.webp" alt="" srcset="">
+export const ListArticules: Articules[] = [
+  {
+    imagen: '../../../../../assets/img/w800/domotica.webp',
+    titulo: 'DOMÓTICA SMART HOME',
+    descripcion: 'Soluciones inteligentes de domótica para que pueda crear su espacio de vida ideal. Las tecnologías inteligentes para el hogar pueden fusionarse naturalmente en nuestra vida diaria.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/cctvalarma.webp',
+    titulo: 'SISTEMAS DE SEGURIDAD PERIMETRAL',
+    descripcion: 'Soluciones a su medida para proteger lo realmente importante, a través de sistemas de Cámaras de Seguridad, Alarmas, Sensores de Movimiento y más.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/biometrico.webp',
+    titulo: 'CONTROL DE ACCESO',
+    descripcion: 'En CIFRADO analizamos los puntos débiles de cada propiedad a proteger y le presentamos un proyecto detallado con todos los elementos a instalar y una valoración acorde con sus necesidades.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/cableado-estructurado.webp',
+    titulo: 'CABLEADO ESTRUCTURADO',
+    descripcion: 'Soluciones en cableado estructurado en cobre, fibra óptica y WiFi para su empresa.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/wifi.webp',
+    titulo: 'REDES MESH Y PORTAL CAUTIVO WIFI 6',
+    descripcion: 'Actualice su conexión inalámbrica a la última generación de sistemas Wi-Fi de malla. Genere una base de datos real con el portal cautivo que traen la mayoría de AP Mesh.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/ptp.webp',
+    titulo: 'ENLACES INALÁMBRICOS PTP & PMTP',
+    descripcion: 'Para extender la red LAN en forma inalámbrica, disponemos de sistemas inalámbricos con los que se pueden establecer Enlaces Punto a Punto y Punto Multipunto, permitiendo lograr conexiones remotas en distancias de hasta 40 Km en condiciones de Línea de Vista de RF (LOS).'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/amplificadorcelular.webp',
+    titulo: 'AMPLIFICADOR DE SEÑAL CELULAR',
+    descripcion: 'Proporcionamos los mejores equipos para amplificar la señal celular de los principales operadores telefónicos del país. Mejore la señal de red celular de su finca, casa, apartamento, oficina o negocio. Navegue en internet sin interrupciones y realice llamadas sin caídas.'
+  },
+  {
+    imagen: '../../../../../assets/img/w800/redesing.webp',
     titulo: 'SOPORTE & MANTENIMIENTO PÓLIZAS',
     descripcion: 'Proporcionamos asistencia con hardware y software, cualquier tipo de daños o simplemente servicios como diagnósticos o mantenimientos preventivos.'
   }

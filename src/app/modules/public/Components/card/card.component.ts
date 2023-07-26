@@ -7,6 +7,8 @@ import {
   ViewChild
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common'
+
 import { Articules } from '@interfaces/models';
 
 @Component({
