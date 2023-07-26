@@ -3,4 +3,9 @@
   functions = "./functions"
   publish = "dist/cifrado-ssr/browser"
 
+[[redirects]]
+  from = "/*"
+  to = "./netlify/functions/start"
+  status = 200
+
 
