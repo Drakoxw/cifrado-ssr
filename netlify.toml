@@ -1,5 +1,5 @@
 [build]
-  command = "npm run prerender  -- --c production && ng run cifrado-ssr:serverless:production"
+  command = "npm run prerender  ---prod && ng run cifrado-ssr:serverless:production"
   publish = "dist/cifrado-ssr/browser"
 
 [[plugins]]
