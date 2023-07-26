@@ -1,1 +1,33 @@
-<p>about-us works!</p>
+
+<div class="p-[10px] font-montserrat max-w-6xl mx-auto">
+  <section class="p-[10px] mt-20 md:mt-0 md:flex w-full md:gap-8 ">
+    <div class="md:w-6/12">
+      <h2 class="text-[25px] text-center font-bold text-[#00A887] leading-[1.29] mb-[20px] md:text-[2.53rem] whitespace-nowrap"
+      >¿Quiénes somos?
+      </h2>
+      <div class="max-w-[555px] mx-auto text-[15px] md:text-[18px] text-justify font-normal leading-[1.2] mb-[.5em] text-[#0a0a0a]">
+        <span class="text-[#0082cb] font-bold">CIFRADO</span> es una empresa especializada en el diseño, instalación, mantenimiento y renovación de cableado estructurado, redes y enlaces inalámbricos, y sistemas de seguridad como cámaras, sensores, alarmas y la integración de todas ellas.
+        <br>Cubrimos el área metropolitana del Valle de Aburrá, el Oriente Antioqueño y la Zona De Urabá.
+      </div>
+    </div>
+    <picture class="md:w-6/12">
+      <img width="100%" height="auto" src="../../../../../assets/img/quienes-somos.webp" alt="quienes-somos">
+    </picture>
+  </section>
+
+  <h2 class="text-[1.73rem] font-bold text-[#00A887] mb-5 !leading-[1.29] md:text-[2.53rem] text-start"
+  >¿Por qué elegirnos?
+  </h2>
+
+  <section class="p-4">
+    <div *ngFor="let item of list" class="flex items-start">
+      <img class="mt-[2px]" width="18" height="18" src="../../../../../assets/svgs/isotipo-cifrado.svg" alt="isotipo cifrado">
+      <p class="text-[#0082CB] pl-[5px] !leading-[1.2] text-[15px] md:text-lg font-medium">{{ item }}</p>
+    </div>
+
+  </section>
+</div>
+
+<app-strategic-guidelines />
+
+<app-footer-home />

@@ -1,0 +1,6 @@
+<section class="w-full flex flex-col md:flex-row bg-[#0081c8] p-4 text-white font-montserrat">
+  <div *ngFor="let item of data" class="p-[10px] md:w-4/12">
+    <h2 class="text-[25px] mb-[20px] font-bold">{{ item.title }}</h2>
+    <p class="text-[15px] mb-[.5em] leading-[1.2] font-normal">{{ item.content }}</p>
+  </div>
+</section>

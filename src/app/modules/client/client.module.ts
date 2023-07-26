@@ -6,13 +6,13 @@ import { AboutUsComponent } from './Views/about-us/about-us.component';
 import { ContactUsComponent } from './Views/contact-us/contact-us.component';
 import { HomeComponent } from './Views/home/home.component';
 
-import { ButtonComponent } from '@shared/button/button.component'
+import { ButtonComponent } from '@shared/button/button.component';
 
 @NgModule({
   declarations: [
     AboutUsComponent,
     ContactUsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,

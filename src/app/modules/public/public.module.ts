@@ -11,6 +11,7 @@ import { Banner1Component } from './Components/banner1/banner1.component';
 import { FooterHomeComponent } from './Components/footer-home/footer-home.component';
 import { CarruselComponent } from './Components/carrusel/carrusel.component';
 import { CardComponent } from './Components/card/card.component';
+import { StrategicGuidelinesComponent } from './Components/strategic-guidelines/strategic-guidelines.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardComponent } from './Components/card/card.component';
     Banner1Component,
     FooterHomeComponent,
     CarruselComponent,
-    CardComponent
+    CardComponent,
+    StrategicGuidelinesComponent
   ],
   imports: [
     CommonModule,
