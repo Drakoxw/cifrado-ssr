@@ -1,6 +1,5 @@
 [build]
-  command = "npm run prerender"
-  functions = "./functions"
+  command = "npm run prerender  -- --c production && ng run cifrado-ssr:serverless:production"
   publish = "dist/cifrado-ssr/browser"
 
 [[plugins]]
@@ -8,5 +7,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/angular-builder"
+  to = "/index.html"
   status = 200
