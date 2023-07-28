@@ -1,0 +1,175 @@
+<section class="w-full bg-[#0081c8] relative z-10">
+  <div class="w-full flex items-center justify-center flex-col pt-8 px-6">
+    <h2 class="text-white text-[24px] md:text-[2.53rem] font-bold">
+      DÉJANOS TU MENSAJE
+    </h2>
+
+    <div
+      class="rounded-md bg-white max-w-[580px] mt-4 p-4 w-full text-[#2f3f50]"
+    >
+      <form class="w-full font-montserrat flex flex-col gap-4 p-4">
+        <label for="name" class="block text-sm -mb-4 font-bold"
+          >Nombre Completo <span class="text-red-600">*</span></label
+        >
+        <div class="flex w-full items-end gap-4">
+          <div class="w-full">
+            <input type="text" id="name" class="input" required />
+            <label class="minlabel">Nombre</label>
+          </div>
+
+          <div class="w-full">
+            <input type="text" id="lastname" class="input" required />
+            <label class="minlabel">Apellidos</label>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <label for="email" class="block text-sm font-bold"
+            >Email <span class="text-red-600">*</span></label
+          >
+          <input type="email" id="email" class="input" required />
+        </div>
+
+        <div class="w-full">
+          <label for="email" class="block text-sm font-bold"
+            >Telefono/Celular <span class="text-red-600">*</span></label
+          >
+          <input type="number" id="email" class="input" required />
+        </div>
+
+        <div class="motivo">
+          <label for="name" class="block text-sm font-bold"
+            >Asunto <span class="text-red-600">*</span></label
+          >
+          <ul class="text-sm text-[#0a0a0a] leading-[1.2] font-normal">
+            <li class="">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_1"
+                name="wpforms[fields][7]"
+                value="Circuito Cerrado de Televisión"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_1"
+                >Circuito Cerrado de Televisión</label
+              >
+            </li>
+            <li class="choice-2 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_2"
+                name="wpforms[fields][7]"
+                value="Alarmas"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_2"
+                >Alarmas</label
+              >
+            </li>
+            <li class="choice-3 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_3"
+                name="wpforms[fields][7]"
+                value="Soporte, Mantenimiento y Renovación Tecnológica"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_3"
+                >Soporte, Mantenimiento y Renovación Tecnológica</label
+              >
+            </li>
+            <li class="choice-4 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_4"
+                name="wpforms[fields][7]"
+                value="Cableado Estructurado"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_4"
+                >Cableado Estructurado</label
+              >
+            </li>
+            <li class="choice-5 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_5"
+                name="wpforms[fields][7]"
+                value="Redes y Enlaces Inalámbricos"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_5"
+                >Redes y Enlaces Inalámbricos</label
+              >
+            </li>
+            <li class="choice-6 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_6"
+                name="wpforms[fields][7]"
+                value="Kits CCTV, Alarmas y Wi-Fi"
+                required=""
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_6"
+                >Kits CCTV, Alarmas y Wi-Fi</label
+              >
+            </li>
+            <li class="choice-7 depth-1">
+              <input
+                type="radio"
+                id="wpforms-689-field_7_7"
+                name="wpforms[fields][7]"
+                value="Otro"
+                required
+              /><label
+                class="ml-2"
+                for="wpforms-689-field_7_7"
+                >Otro</label
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="w-full">
+          <label for="asunto" class="block text-sm font-bold"
+            >Asunto <span class="text-red-600">*</span></label
+          >
+          <input type="text" id="asunto" class="input" required />
+        </div>
+
+        <div class="w-full">
+          <label for="mensaje" class="block text-sm font-bold"
+            >Escribe tu mensaje <span class="text-red-600">*</span></label
+          >
+          <textarea id="mensaje" name="mensaje" rows="4" class="input !h-32" ></textarea>
+        </div>
+
+        <app-button styleButton="cifradoGreen" type="submit" class="md:w-48" >Enviar mensaje</app-button>
+
+      </form>
+    </div>
+  </div>
+  <div class="w-full bg-white text-[#0081c8]">
+    <div class="w-[165%] overflow-hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 1000 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          class="elementor-shape-fill"
+          d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+        c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+        c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</section>

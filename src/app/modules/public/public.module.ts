@@ -12,6 +12,9 @@ import { FooterHomeComponent } from './Components/footer-home/footer-home.compon
 import { CarruselComponent } from './Components/carrusel/carrusel.component';
 import { CardComponent } from './Components/card/card.component';
 import { StrategicGuidelinesComponent } from './Components/strategic-guidelines/strategic-guidelines.component';
+import { Banner2Component } from './Components/banner2/banner2.component';
+import { EmailFormComponent } from './Components/email-form/email-form.component';
+import { ButtonComponent } from '@shared/button/button.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,14 @@ import { StrategicGuidelinesComponent } from './Components/strategic-guidelines/
     FooterHomeComponent,
     CarruselComponent,
     CardComponent,
-    StrategicGuidelinesComponent
+    StrategicGuidelinesComponent,
+    Banner2Component,
+    EmailFormComponent,
   ],
   imports: [
     CommonModule,
-    SubRoutingModule
+    SubRoutingModule,
+    ButtonComponent
   ]
 })
 export class PublicModule { }

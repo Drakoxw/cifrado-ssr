@@ -57,12 +57,7 @@
   font-weight: 400;
   font-display: swap;
 }
-@font-face {
-  font-family: Montserrat;
-  src: url("./assets/fonts/monserrat/Montserrat-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap;
-}
+
 
 @font-face {
   font-family: Montserrat;
