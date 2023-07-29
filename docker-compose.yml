@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cifrado-ssr:
+    image: cifrado-ssr
+    build:
+      context: .
+      dockerfile: ./Dockerfile
