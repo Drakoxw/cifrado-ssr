@@ -1,13 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+
+import { ToastrAlertService } from '@services/toastr-alert.service';
+
 import {
   REGEX,
   RadioOptionsContactUs,
   radioButtonsFormContactUs,
 } from '@constants/index';
-import { logDev } from '@utils/console';
-import { Subscription } from 'rxjs';
+import { logDev } from '@utils/index';
 
 type TypeForm = {
   name: FormControl<string | null>;
@@ -29,7 +32,7 @@ export class EmailFormComponent implements OnInit, OnDestroy {
   optionsSubject: RadioOptionsContactUs[] = radioButtonsFormContactUs;
   subs: Subscription[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private toastr: ToastrAlertService) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       lastname: ['', [Validators.required, Validators.minLength(3)]],
@@ -46,6 +49,7 @@ export class EmailFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
     const subsc = this.form.get('subject')?.valueChanges.subscribe((val) => {
       if (val === 'Otro') {
         this.form
@@ -65,9 +69,10 @@ export class EmailFormComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
+      this.toastr.warning('Faltan Campos Obligatorios!', 'Error');
       return;
     }
-    logDev('form.value',this.form.value)
+    this.toastr.success('Mensaje Enviado!');
     this.form.reset();
   }
 
