@@ -65,7 +65,6 @@ export class EmailFormComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
-      this.form.markAsTouched
       return;
     }
     logDev('form.value',this.form.value)

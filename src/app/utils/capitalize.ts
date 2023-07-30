@@ -8,3 +8,7 @@ export function toCapitalize(value: string): string {
 
 	return value
 }
+
+export function isLetterCapitalize(value: string = ''): boolean {
+  return /(?=.*?[A-Z])\w+/g.test(value)
+}

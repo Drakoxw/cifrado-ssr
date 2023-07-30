@@ -3,6 +3,10 @@
   background: #fafafa;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .minlabel {
   @apply block text-[0.8em] text-[#2f3f50] leading-[1.2] font-medium;
 }
