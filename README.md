@@ -24,6 +24,10 @@
 ```sh
     docker build -t cifrado-ssr-img .
 ```
+### Refactore Docker image
+```sh
+    docker compose up --build -d
+```
 ### Run Docker 
 ```sh
     docker run --name cifrado-ssr-app -d -it -p 80:80 cifrado-ssr-img
