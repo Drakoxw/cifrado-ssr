@@ -7,151 +7,155 @@
     <div
       class="rounded-md bg-white max-w-[580px] mt-4 p-4 w-full text-[#2f3f50]"
     >
-      <form class="w-full font-montserrat flex flex-col gap-4 p-4">
-        <label for="name" class="block text-sm -mb-4 font-bold"
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        class="w-full font-montserrat flex flex-col gap-4 p-4"
+      >
+        <label
+          for="name"
+          [ngClass]="[
+            'block text-sm -mb-4 font-bold',
+            name.validateError ? 'text-red-600' : ''
+          ]"
           >Nombre Completo <span class="text-red-600">*</span></label
         >
         <div class="flex w-full items-end gap-4">
           <div class="w-full">
-            <input type="text" id="name" class="input" required />
-            <label class="minlabel">Nombre</label>
+            <input
+              formControlName="name"
+              type="text"
+              id="name"
+              class="input"
+              required
+            />
+            <label
+              [ngClass]="[name.validateError ? 'minlabelError' : 'minlabel']"
+              >Nombre</label
+            >
           </div>
 
           <div class="w-full">
-            <input type="text" id="lastname" class="input" required />
-            <label class="minlabel">Apellidos</label>
+            <input
+              formControlName="lastname"
+              type="text"
+              id="lastname"
+              class="input"
+              required
+            />
+            <label
+              [ngClass]="[
+                lastname.validateError ? 'minlabelError' : 'minlabel'
+              ]"
+              >Apellidos</label
+            >
           </div>
         </div>
 
         <div class="w-full">
-          <label for="email" class="block text-sm font-bold"
+          <label
+            for="email"
+            [ngClass]="[
+              'block text-sm  font-bold',
+              email.validateError ? 'text-red-600' : ''
+            ]"
             >Email <span class="text-red-600">*</span></label
           >
-          <input type="email" id="email" class="input" required />
+          <input
+            formControlName="email"
+            type="email"
+            id="email"
+            class="input"
+            required
+          />
         </div>
 
         <div class="w-full">
-          <label for="email" class="block text-sm font-bold"
+          <label
+            for="phone"
+            [ngClass]="[
+              'block text-sm font-bold',
+              phone.validateError ? 'text-red-600' : ''
+            ]"
             >Telefono/Celular <span class="text-red-600">*</span></label
           >
-          <input type="number" id="email" class="input" required />
+          <input
+            formControlName="phone"
+            type="number"
+            id="phone"
+            class="input"
+            required
+          />
         </div>
 
         <div class="motivo">
-          <label for="name" class="block text-sm font-bold"
+          <label
+            for="name"
+            [ngClass]="[
+              'block text-sm font-bold',
+              subject.validateError ? 'text-red-600' : ''
+            ]"
             >Asunto <span class="text-red-600">*</span></label
           >
           <ul class="text-sm text-[#0a0a0a] leading-[1.2] font-normal">
-            <li class="">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_1"
-                name="wpforms[fields][7]"
-                value="Circuito Cerrado de Televisión"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_1"
-                >Circuito Cerrado de Televisión</label
-              >
-            </li>
-            <li class="choice-2 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_2"
-                name="wpforms[fields][7]"
-                value="Alarmas"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_2"
-                >Alarmas</label
-              >
-            </li>
-            <li class="choice-3 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_3"
-                name="wpforms[fields][7]"
-                value="Soporte, Mantenimiento y Renovación Tecnológica"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_3"
-                >Soporte, Mantenimiento y Renovación Tecnológica</label
-              >
-            </li>
-            <li class="choice-4 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_4"
-                name="wpforms[fields][7]"
-                value="Cableado Estructurado"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_4"
-                >Cableado Estructurado</label
-              >
-            </li>
-            <li class="choice-5 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_5"
-                name="wpforms[fields][7]"
-                value="Redes y Enlaces Inalámbricos"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_5"
-                >Redes y Enlaces Inalámbricos</label
-              >
-            </li>
-            <li class="choice-6 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_6"
-                name="wpforms[fields][7]"
-                value="Kits CCTV, Alarmas y Wi-Fi"
-                required=""
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_6"
-                >Kits CCTV, Alarmas y Wi-Fi</label
-              >
-            </li>
-            <li class="choice-7 depth-1">
-              <input
-                type="radio"
-                id="wpforms-689-field_7_7"
-                name="wpforms[fields][7]"
-                value="Otro"
-                required
-              /><label
-                class="ml-2"
-                for="wpforms-689-field_7_7"
-                >Otro</label
+            <li *ngFor="let item of optionsSubject">
+              <label class="flex gap-2">
+                <input
+                  type="radio"
+                  formControlName="subject"
+                  [id]="item.id"
+                  name="subject"
+                  [value]="item.value"
+                />{{ item.label }}</label
               >
             </li>
           </ul>
         </div>
 
-        <div class="w-full">
-          <label for="asunto" class="block text-sm font-bold"
+        <div class="w-full" *ngIf="form.get('subject')?.value == 'Otro'">
+          <label
+            for="asunto"
+            [ngClass]="[
+              'block text-sm font-bold',
+              otherSubject.validateError ? 'text-red-600' : ''
+            ]"
             >Asunto <span class="text-red-600">*</span></label
           >
-          <input type="text" id="asunto" class="input" required />
+          <input
+            formControlName="otherSubject"
+            type="text"
+            id="asunto"
+            class="input"
+            required
+          />
         </div>
 
         <div class="w-full">
-          <label for="mensaje" class="block text-sm font-bold"
+          <label
+            for="mensaje"
+            [ngClass]="[
+              'block text-sm font-bold',
+              message.validateError ? 'text-red-600' : ''
+            ]"
             >Escribe tu mensaje <span class="text-red-600">*</span></label
           >
-          <textarea id="mensaje" name="mensaje" rows="4" class="input !h-32" ></textarea>
+          <textarea
+            id="mensaje"
+            formControlName="message"
+            name="mensaje"
+            rows="4"
+            class="input !h-32"
+          ></textarea>
         </div>
 
-        <app-button styleButton="cifradoGreen" type="submit" class="md:w-48" >Enviar mensaje</app-button>
-
+        <app-button
+          styleButton="cifradoGreen"
+          type="submit"
+          class="md:w-48"
+          disable
+          [isDisable]="!form.valid && form.touched"
+          >Enviar mensaje</app-button
+        >
       </form>
     </div>
   </div>

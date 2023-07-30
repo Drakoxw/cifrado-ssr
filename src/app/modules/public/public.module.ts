@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SubRoutingModule } from './sub-routing.module'
 
@@ -33,6 +34,7 @@ import { ButtonComponent } from '@shared/button/button.component';
   imports: [
     CommonModule,
     SubRoutingModule,
+    ReactiveFormsModule,
     ButtonComponent
   ]
 })
