@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 const config = {
   timeOut: 5000,
   positionClass: 'toast-top-right',
-  preventDuplicates: false,
 };
 
 @Injectable({

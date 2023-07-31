@@ -9,6 +9,16 @@
   <link rel="preconnect" href="../src/assets/img/banner-home/cableadobanner.webp" />
   <link rel="preload" as="font">
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <script type="text/javascript">
+    (function(){
+      window.console.error = ($event, more) => {
+        console.log('** Event 🤦‍♂️***', $event);
+        if (more) {
+          console.log('** Trace 👉️***', more);
+        }
+      };
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

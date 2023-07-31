@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,8 @@ import {
   RadioOptionsContactUs,
   radioButtonsFormContactUs,
 } from '@constants/index';
-import { logDev } from '@utils/index';
+import { HttpService } from '@services/http.service';
+import { ContactMeRequest } from '@interfaces/request';
 
 type TypeForm = {
   name: FormControl<string | null>;
@@ -32,7 +33,10 @@ export class EmailFormComponent implements OnInit, OnDestroy {
   optionsSubject: RadioOptionsContactUs[] = radioButtonsFormContactUs;
   subs: Subscription[] = [];
 
-  constructor(private fb: FormBuilder, private toastr: ToastrAlertService) {
+  private toastr = inject(ToastrAlertService)
+  private httpServ= inject(HttpService)
+
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       lastname: ['', [Validators.required, Validators.minLength(3)]],
@@ -72,8 +76,26 @@ export class EmailFormComponent implements OnInit, OnDestroy {
       this.toastr.warning('Faltan Campos Obligatorios!', 'Error');
       return;
     }
-    this.toastr.success('Mensaje Enviado!');
-    this.form.reset();
+    const subject = this.form.value.subject === 'Otro' ? `Otro: ${this.form.value.otherSubject}` : String(this.form.value.subject);
+    const data: ContactMeRequest = {
+      fullname: `${this.form.value.name} ${this.form.value.lastname}`,
+      email: String(this.form.value.email),
+      phone: Number(this.form.value.phone),
+      subject,
+      message: String(this.form.value.message)
+    }
+
+    this.httpServ.sendEmailContactUs(data).subscribe({
+      next: (r) => {
+        if (r.error) {
+          this.toastr.error(r.msg, 'Error');
+          return;
+        }
+        this.toastr.success('Mensaje Enviado!');
+        this.form.reset();
+      },
+      error: (err) => this.toastr.error(err.error.msg, 'Error')
+    })
   }
 
   get name() {
