@@ -5,4 +5,6 @@ export interface RoutesClient {
   home: string;
   aboutUs: string;
   contactUs: string;
+  login: string;
+  listClients: string;
 }

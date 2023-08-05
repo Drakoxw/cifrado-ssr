@@ -1,23 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SubRoutingModule } from './sub-routing.module'
-
-import { AboutUsComponent } from './Views/about-us/about-us.component';
-import { ContactUsComponent } from './Views/contact-us/contact-us.component';
-import { HomeComponent } from './Views/home/home.component';
+import { SubRoutingModule } from './sub-routing.module';
 
 import { ButtonComponent } from '@shared/button/button.component';
+import { LoginViewComponent } from './Views/login-view/login-view.component';
+import { ListClientViewComponent } from './Views/list-client-view/list-client-view.component';
 
 @NgModule({
   declarations: [
-    AboutUsComponent,
-    ContactUsComponent,
-    HomeComponent,
+    LoginViewComponent,
+    ListClientViewComponent
   ],
-  imports: [
-    CommonModule,
-    SubRoutingModule,
-    ButtonComponent
-  ]
+  imports: [CommonModule, SubRoutingModule, ButtonComponent],
 })
-export class ClientModule { }
+export class ClientModule {}
