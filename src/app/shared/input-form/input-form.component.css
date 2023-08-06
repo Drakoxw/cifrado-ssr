@@ -1,0 +1,60 @@
+.content-input {
+  width: 100%;
+}
+
+.required-label {
+  margin-left: 8px;
+  color: #ff0000;
+  font-weight: normal;
+}
+
+.error {
+  color: #ff0000!important;
+}
+
+.label-class {
+  text-align: left;
+  color: #2f3f50;
+  border: 0;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  display: flex;
+  vertical-align: baseline;
+  font-weight: 700;
+  float: none;
+}
+
+.input-class {
+  width: 100%;
+  color: #666;
+  padding: 0.75em;
+  height: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eaeaea;
+  border-radius: 2px;
+  background: #fafafa;
+  box-shadow: none;
+  transition: all 0.2s linear;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.input-sublabel {
+  color: #2f3f50;
+  display: flex;
+  font-size: 0.85em;
+  float: none;
+  border: 0;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}

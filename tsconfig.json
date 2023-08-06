@@ -28,7 +28,7 @@
       "@shared/*": ["src/app/shared/*"],
       "@services/*": ["src/app/services/*"],
       "@utils/*": ["src/app/utils/*"],
-      "@state/*": ["src/app/state/*"],
+      "@state/*": ["src/app/core/state/*"],
       "@constants/*": ["src/app/core/constants/*"],
       "@interfaces/*": ["src/app/core/interfaces/*"],
       "@mocks/*": ["src/app/core/mocks/*"],

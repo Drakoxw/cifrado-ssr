@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppComponent } from '@src/app/app.component';
+import { TOKEN_KEY } from '@constants/index';
 
 class LocalStorage implements Storage {
   [name: string]: any;
@@ -20,6 +21,8 @@ class LocalStorage implements Storage {
 })
 export class LocalstorageService implements Storage {
   private storage: Storage;
+  private tokenString: string = '';
+
   constructor() {
     this.storage = new LocalStorage();
 
@@ -39,6 +42,18 @@ export class LocalstorageService implements Storage {
 
   getItem(key: string): string | null {
     return this.storage.getItem(key);
+  }
+
+  getToken(): string {
+    if (this.tokenString) {
+      return this.tokenString;
+    }
+    const token = this.getItem(TOKEN_KEY);
+    if (token) {
+      this.tokenString = token;
+      return token;
+    }
+    return '';
   }
 
   key(index: number): string | null {
