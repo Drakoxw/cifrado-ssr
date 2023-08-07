@@ -1,11 +1,23 @@
 <div [ngClass]="['content-input', classComponent]">
-  <label [ngClass]="['label-class', classLabel, error ? 'error' : '' ]" *ngIf="label" [for]="inputId"
+
+  <label
+    [ngClass]="['label-class', classLabel, error ? 'error' : '']"
+    *ngIf="label"
+    [for]="inputId"
     >{{ label }}<span *ngIf="required" class="required-label">*</span>
   </label>
+
   <input
     [ngClass]="['input-class', classInput]"
     [type]="inputType"
     [formControl]="control"
   />
-  <label [ngClass]="['input-sublabel', error ? 'error' : '' ]" *ngIf="sublabel" [for]="inputId">{{ sublabel }}</label>
+
+  <label
+    [ngClass]="['input-sublabel', error ? 'error' : '']"
+    *ngIf="sublabel"
+    [for]="inputId"
+    >{{ sublabel }}</label
+  >
+
 </div>

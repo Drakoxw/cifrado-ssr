@@ -24,7 +24,6 @@
       "dom"
     ],
     "paths": {
-      "@src/*": ["src/*"],
       "@shared/*": ["src/app/shared/*"],
       "@services/*": ["src/app/services/*"],
       "@utils/*": ["src/app/utils/*"],
@@ -34,6 +33,7 @@
       "@mocks/*": ["src/app/core/mocks/*"],
       "@moduleClient/*": ["src/app/modules/client/*"],
       "@modulePublic/*": ["src/app/modules/public/*"],
+      "@src/*": ["src/*"]
     }
   },
   "angularCompilerOptions": {

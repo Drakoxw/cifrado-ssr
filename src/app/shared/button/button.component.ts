@@ -103,7 +103,7 @@ const classesButton = {
     'relative inline-flex items-center justify-center p-0.5 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400',
   pinkToOrangeGradientOutline:
     'relative inline-flex items-center justify-center p-0.5 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800',
-  cifradoGreen: 'text-white bg-[#00a787] font-semibold text-base text-[1.06rem] leading-none capitalize px-10 py-[15px] rounded-sm border-solid border-0 border-[#00a787] w-full'
+  cifradoGreen: 'text-white bg-[#00a787] font-semibold text-base text-[1.06rem] leading-none capitalize px-10 py-[15px] rounded-sm border-solid border-0 border-[#00a787]'
 };
 
 type Size = 'xsm' | 'sm' | 'base' | 'lg' | 'xlg';

@@ -4,3 +4,12 @@ export interface ResponseBase {
   message: string
   data: any
 }
+
+export interface error {
+  title: string
+  detail: string
+}
+
+export interface ErrorsResponse {
+  errors: error[]
+}

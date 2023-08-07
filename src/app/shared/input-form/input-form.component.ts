@@ -1,8 +1,9 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Subscription } from 'rxjs';
+
+type TypeInput = 'text' | 'email' | 'password' | 'number' | 'date';
 
 @Component({
   selector: 'input-form',
@@ -11,36 +12,41 @@ import { Subscription } from 'rxjs';
   templateUrl: './input-form.component.html',
   styleUrls: ['./input-form.component.css'],
 })
-export class InputFormComponent implements OnInit, OnDestroy {
+export class InputFormComponent implements OnInit {
+  /** Form control usado en el input */
   @Input() control = new FormControl();
+  /** Titulo del input */
   @Input() label = '';
+  /** Subtitulo del input en la parte inferior */
   @Input() sublabel = '';
+  /** Id del inpuy para lo for del los labels */
   @Input() inputId = '';
-  @Input() inputType = 'text';
+  /** Tipo de input que se va a usar, por defecto es texto.
+   * @example text, email, password, number, date
+   * @default text
+   * @type {TypeInput} */
+  @Input() inputType: TypeInput = 'text';
+  /** Indica si el input es obligatorio. */
   @Input() required = false;
+  /** Placeholder del input */
   @Input() placeholder = '';
+  /** Clase adicional para contenedor del componente */
   @Input() classComponent = '';
+  /** Clase adicional para el input */
   @Input() classInput = '';
+  /** Clase adicional para el label */
   @Input() classLabel = '';
+  /** Recibe la indicacion si el input tiene un error. */
+  @Input() set controlError(val: boolean) {
+    this.error = val;
+  };
 
   error: boolean = false;
-  subs: Subscription[] = [];
-
-  ngOnDestroy(): void {
-    this.subs.forEach((sub) => sub.unsubscribe());
-  }
-
-  ngAfterViewInit() {
-    this.error = Boolean(this.control.errors && this.control.touched);
-  }
 
   ngOnInit(): void {
-    if (this.required) {
-      this.control.setValidators([Validators.required]);
+    if (this.inputId == '') {
+      this.inputId = this.label.toLowerCase().replace(' ', '-');
     }
-    this.subs[0] = this.control.valueChanges.subscribe(() => {
-      this.error = false;
-    })
   }
 
 }

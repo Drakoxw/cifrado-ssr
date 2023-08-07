@@ -36,16 +36,9 @@ export class LocalstorageService implements Storage {
   [name: string]: any;
   length!: number;
 
-  clear(): void {
-    this.storage.clear();
-  }
-
-  getItem(key: string): string | null {
-    return this.storage.getItem(key);
-  }
-
+  /** Retorna el token guardado en el localstorage */
   getToken(): string {
-    if (this.tokenString) {
+    if (this.tokenString !== '') {
       return this.tokenString;
     }
     const token = this.getItem(TOKEN_KEY);
@@ -53,7 +46,28 @@ export class LocalstorageService implements Storage {
       this.tokenString = token;
       return token;
     }
+    if (window) {
+      if (window.localStorage.getItem(TOKEN_KEY) != null) {
+        console.log('token from windows');
+
+        return String(window.localStorage.getItem(TOKEN_KEY));
+      }
+    }
     return '';
+  }
+
+  /** Guardar el token */
+  setToken(token: string): void {
+    this.tokenString = token;
+    this.setItem(TOKEN_KEY, token);
+  }
+
+  clear(): void {
+    this.storage.clear();
+  }
+
+  getItem(key: string): string | null {
+    return this.storage.getItem(key);
   }
 
   key(index: number): string | null {
